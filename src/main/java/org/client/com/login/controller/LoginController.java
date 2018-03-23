@@ -58,14 +58,19 @@ public class LoginController {
             BindingResult bindingResult,
             HttpServletResponse response) {
 
-        RedirectUtil redirectUtil = new RedirectUtil();
+        ResponseResult<LoginModel> result = new ResponseResult<>();
+        if (bindingResult.hasErrors()) {
+            result.setSuccess(false);
+            result.setMessage(bindingResult.getFieldError().getDefaultMessage());
+            return result;
+        }
+
         //验证用户和令牌的有效性
         MyUsernamePasswordToken token = new MyUsernamePasswordToken(model.getUsername(),
 //此处决定此方法只能用于普通用户
                 "user",
                 Base64Util.encode(model.getPassword()));
         Subject subject = SecurityUtils.getSubject();
-        ResponseResult<LoginModel> result = new ResponseResult<>();
         try {
             subject.login(token);
             log.info("获取令牌成功");
