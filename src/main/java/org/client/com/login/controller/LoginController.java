@@ -1,5 +1,7 @@
 package org.client.com.login.controller;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.session.SessionException;
 import org.apache.shiro.subject.Subject;
@@ -14,11 +16,9 @@ import org.client.com.util.uuidUtil.GetUuid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.Cookie;
@@ -29,7 +29,9 @@ import javax.validation.Valid;
 /**
  * login
  */
+@Api(value = "login", description = "登录")
 @RestController
+@RequestMapping("/login")
 public class LoginController {
     private final static Logger log = LoggerFactory
             .getLogger(LoginController.class);
@@ -37,21 +39,25 @@ public class LoginController {
     @Autowired
     private TokenInterface tkInterface;
 
-    @GetMapping("/tologin")
-    public ModelAndView tologin() {
-        return new ModelAndView("/login/login");
-    }
-
     /**
-     * @param model  LoginModel
-     * @param result BindingResult
-     * @return ModelAndView
+     * @param model         LoginModel
+     * @param bindingResult BindingResult
+     * @return ResponseResult<LoginModel>
      */
-    @PostMapping("/login")
-    public ModelAndView loginIn(
-            @Valid @ModelAttribute("form") LoginModel model,
-            BindingResult result,
-            HttpServletResponse response) throws Exception {
+    @ApiOperation(value = "登录",
+            response = ResponseResult.class,
+            httpMethod = "POST",
+            consumes = MediaType.APPLICATION_JSON_UTF8_VALUE,
+            produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @RequestMapping(value = "/login",
+            method = RequestMethod.POST,
+            consumes = MediaType.APPLICATION_JSON_UTF8_VALUE,
+            produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public ResponseResult<LoginModel> loginIn(
+            @Valid @RequestBody LoginModel model,
+            BindingResult bindingResult,
+            HttpServletResponse response) {
+
         RedirectUtil redirectUtil = new RedirectUtil();
         //验证用户和令牌的有效性
         MyUsernamePasswordToken token = new MyUsernamePasswordToken(model.getUsername(),
@@ -59,6 +65,7 @@ public class LoginController {
                 "user",
                 Base64Util.encode(model.getPassword()));
         Subject subject = SecurityUtils.getSubject();
+        ResponseResult<LoginModel> result = new ResponseResult<>();
         try {
             subject.login(token);
             log.info("获取令牌成功");
@@ -76,16 +83,19 @@ public class LoginController {
                 cookie.setPath("/");
                 cookie.setMaxAge(60);
                 response.addCookie(cookie);
-                return new ModelAndView(redirectUtil.getRedirect() + "/home/init?name=" + model.getUsername());
+                result.setSuccess(true);
+                result.setMessage("登录成功");
+                return result;
             } else {
-                response.setHeader("message", "令牌出错");
-                return new ModelAndView(redirectUtil.getRedirect() + "/index");
+                result.setSuccess(false);
+                result.setMessage("令牌生成错误");
+                return result;
             }
         } catch (Exception e) {
-            log.info("获取令牌失败");
-            log.info(e.getMessage());
-            response.setHeader("message", "账号或密码错误");
-            return new ModelAndView(redirectUtil.getRedirect() + "/login");
+            log.info("e", e.getMessage());
+            result.setSuccess(false);
+            result.setMessage("账号或密码错误");
+            return result;
         }
     }
 
