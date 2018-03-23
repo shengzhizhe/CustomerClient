@@ -1,74 +1,85 @@
 package org.client.com.register.controller;
 
 import feign.FeignException;
-import org.apache.shiro.SecurityUtils;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.client.com.api.AccountInterface;
-import org.client.com.api.model.AccountModel;
 import org.client.com.register.model.RegisterModel;
-import org.client.com.util.redirect.RedirectUtil;
 import org.client.com.util.resultJson.ResponseResult;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
 
+@Api(value = "register", description = "注册")
 @RestController
 @RequestMapping("/register")
 public class RegisterController {
 
     @Autowired
     private AccountInterface anInterface;
-    @Autowired
-    private ResponseResult result;
 
-    @RequestMapping(value = "/toRegister")
-    public ModelAndView init() {
-        return new ModelAndView("/register");
-    }
-
-    @RequestMapping(value = "/register", method = RequestMethod.POST)
-    public ModelAndView register(@Valid @ModelAttribute("form") RegisterModel model,
-                                 BindingResult bindingResult) {
+    @ApiOperation(value = "添加账户",
+            response = ResponseResult.class,
+            httpMethod = "POST",
+            consumes = MediaType.APPLICATION_JSON_UTF8_VALUE,
+            produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @RequestMapping(value = "/register",
+            method = RequestMethod.POST,
+            consumes = MediaType.APPLICATION_JSON_UTF8_VALUE,
+            produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public ResponseResult<RegisterModel> register(@Valid @RequestBody RegisterModel model,
+                                                  BindingResult bindingResult) {
+        ResponseResult<RegisterModel> result = new ResponseResult<>();
         try {
-            SecurityUtils.getSubject().getSession().setAttribute("message", "");
-            RedirectUtil redirectUtil = new RedirectUtil();
-            //数据验证
             if (bindingResult.hasErrors()) {
-                SecurityUtils.getSubject().getSession().setAttribute("message", bindingResult.getFieldError().getDefaultMessage());
-                return new ModelAndView(redirectUtil.getRedirect() + "/register/toRegister");
+                result.setSuccess(false);
+                result.setMessage(bindingResult.getFieldError().getDefaultMessage());
+                return result;
             }
-//两次输入的密码是否一至
             if (!model.isPass()) {
-                SecurityUtils.getSubject().getSession().setAttribute("message", "两次输入的密码不一致");
-                return new ModelAndView(redirectUtil.getRedirect() + "/register/toRegister");
+                result.setSuccess(false);
+                result.setMessage("两次输入的密码不一致");
+                return result;
             }
 
-            AccountModel accountModel = new AccountModel();
-            accountModel.setAccount(model.getAccount());
-            accountModel.setAcctype(1);
-            accountModel.setPassword(model.getPassword());
-            accountModel.setTimes(System.currentTimeMillis());
+            JSONObject json = new JSONObject();
+            json.put("account", model.getAccount());
+            json.put("acctype", 1);
+            json.put("level", "1");
+            json.put("password", model.getPassword());
+            json.put("source", "移动客户端注册");
 
-            ResponseResult result = anInterface.register(accountModel);
-            if (result.isSuccess())
-                return new ModelAndView(redirectUtil.getRedirect() + "/register/registerOK");
-            else {
-                SecurityUtils.getSubject().getSession().setAttribute("message",
-                        result.getCode() == 501 ? "该账户已注册" : result.getMessage());
-                return new ModelAndView(redirectUtil.getRedirect() + "/register/toRegister");
+            ResponseResult responseResult = anInterface.register(json);
+            if (result.isSuccess()) {
+                result.setSuccess(true);
+                result.setMessage("注册成功");
+                return result;
+            } else {
+                result.setSuccess(false);
+                result.setMessage(responseResult.getMessage());
+                return result;
             }
         } catch (FeignException f) {
-            return new ModelAndView("").addObject("服务断开");
+            result.setSuccess(false);
+            result.setMessage("服务通讯异常");
+            return result;
+        } catch (JSONException j) {
+            result.setSuccess(false);
+            result.setMessage("json转换异常");
+            return result;
+        } catch (Exception e) {
+            result.setSuccess(false);
+            result.setMessage("其它异常，请联系管理员");
+            return result;
         }
     }
 
-    @RequestMapping(value = "/registerOK", method = RequestMethod.GET)
-    public ModelAndView registerOK() {
-        return new ModelAndView("/registerOK");
-    }
 }

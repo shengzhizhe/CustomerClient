@@ -1,10 +1,12 @@
 package org.client.com.api;
 
+import feign.Body;
 import feign.Headers;
 import feign.Param;
 import feign.RequestLine;
 import org.client.com.api.model.AccountModel;
 import org.client.com.util.resultJson.ResponseResult;
+import org.json.JSONObject;
 
 public interface AccountInterface {
 
@@ -16,5 +18,6 @@ public interface AccountInterface {
 
     @Headers("Content-Type:application/json")
     @RequestLine("POST /account/account")
-    ResponseResult<AccountModel> register(@Param("model") AccountModel model);
+    @Body("model={model}")
+    ResponseResult<JSONObject> register(@Param("model") JSONObject model);
 }

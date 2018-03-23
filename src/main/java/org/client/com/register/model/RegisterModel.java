@@ -17,18 +17,15 @@ public class RegisterModel implements Serializable {
     private String account;
 
     @NotBlank(message = "密码不能为空")
-    @Pattern(regexp = "^[0-9a-zA-Z]*$", message = "密码由数字和英文字母组成,(大小写至少各有一个)")
-    @Size(min = 8, max = 16, message = "密码长度为8-16")
-//    @Pattern(regexp = "^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{8,16}$", message = "密码由字母和数字组成,且长度为8-16（包含）")
+    @Pattern(regexp = "^[0-9a-zA-Z]*$", message = "密码由数字和英文字母组成")
+    @Size(min = 8, max = 16, message = "密码长度为8-16之间")
     private String password;
 
     @NotBlank(message = "第二次密码不能为空")
-    @Pattern(regexp = "^[0-9a-zA-Z]*$", message = "第二次密码由数字和英文字母组成,(大小写至少各有一个)")
-    @Size(min = 8, max = 16, message = "第二次密码长度为8-16")
+    @Pattern(regexp = "^[0-9a-zA-Z]*$", message = "密码由数字和英文字母组成")
+    @Size(min = 8, max = 16, message = "密码长度为8-16之间")
     private String password2;
 
-//    @NotBlank(message = "验证码不能为空")
-//    @Size(min = 8, max = 16, message = "验证码长度为8-16")
     private String yzm;
 
     private boolean pass;

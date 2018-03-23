@@ -4,13 +4,6 @@ server:
   tomcat: 
     uri-encoding: UTF-8
 spring:
-#  application:
-#    name: client
-  thymeleaf:
-      prefix: classpath:/templates
-      encoding: UTF-8
-  #缓存
-      cache: false
 #表示所有的访问都经过静态资源路径；
   mvc:
     static-path-pattern: /**
@@ -46,11 +39,11 @@ feign:
         isolation:
           thread:
 #          单位 ms
-            timeoutInMilliseconds: 1000*10
+            timeoutInMilliseconds: 1000*1000
 # 日志级别
 error: true
 logging:
-    file: client.log
+    file: CustomerClient.log
     level: org.client.com:debug
 
 #分页每页默认条数设置

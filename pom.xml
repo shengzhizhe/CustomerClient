@@ -175,12 +175,6 @@
             <version>1.8.9</version>
         </dependency>
 
-        <!--<dependency>-->
-        <!--&lt;!&ndash; Required to use PATCH &ndash;&gt;-->
-        <!--<groupId>io.github.openfeign</groupId>-->
-        <!--<artifactId>feign-httpclient</artifactId>-->
-        <!--<version>${feign.version}</version>-->
-        <!--</dependency>-->
 
     </dependencies>
 

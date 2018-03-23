@@ -23,11 +23,10 @@ public class EmailController {
 
     @Autowired
     JavaMailSender mailSender;
-    @Autowired
-    private ResponseResult result;
 
     @RequestMapping(value = "/toemail")
     public ResponseResult regitEmail(@RequestParam("title") String title, @RequestParam("toUser") String toUser) {
+        ResponseResult result = new ResponseResult();
         EmailUtil emailUtil = new EmailUtil();
         boolean b = emailUtil.toEmail(mailSender, title, "您本次验证码为<span style='color:red;'>123</span>", forEmail, toUser);
         result.setSuccess(b);
