@@ -6,7 +6,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @RestController
 @RequestMapping("/changepass")
-public class changepass {
+public class Changepass {
     @RequestMapping("/init")
     public ModelAndView init(){
         return new ModelAndView("/person/password");

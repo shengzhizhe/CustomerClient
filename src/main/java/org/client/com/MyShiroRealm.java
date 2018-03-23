@@ -5,11 +5,11 @@ import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
-import org.client.com.api.AccountInterface;
-import org.client.com.api.model.AccountModel;
-import org.client.com.util.algorithm.Algorithm;
-import org.client.com.util.base64.Base64Util;
+import org.client.com.api.TokenInterface;
+import org.client.com.api.model.TokenModel;
 import org.client.com.util.resultJson.ResponseResult;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 
@@ -19,8 +19,10 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class MyShiroRealm extends AuthorizingRealm {
 
+    private static final Logger log = LoggerFactory.getLogger(MyShiroRealm.class);
+
     @Autowired
-    private AccountInterface anInterface;
+    private TokenInterface tkInterface;
 
     @Override
     public String getName() {
@@ -32,64 +34,43 @@ public class MyShiroRealm extends AuthorizingRealm {
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
 
         MyUsernamePasswordToken myToken = (MyUsernamePasswordToken) token;
-        if (myToken.getUsername() != null && !myToken.getUsername().isEmpty()) {
-            //获取用户的输入的账号.
-            String username = (String) myToken.getPrincipal();
-            //实际项目中，这里可以根据实际情况做缓存，如果不做，Shiro自己也是有时间间隔机制，2分钟内不会重复执行该方法
-            ResponseResult<AccountModel> result = anInterface.getAccount(username);
-            if (!result.isSuccess()) {
-                throw new UnknownAccountException();
-            }
-            //此处使用的是user对象，不是username
-            return new SimpleAuthenticationInfo(
-                    result.getData(),
-                    result.getData().getPassword(),
-                    getName()
-            );
-        } else {
-            if (myToken == null || myToken.getSignature() == null || myToken.getSignature().isEmpty()) {
-                //请从新登录;
-                throw new UnknownAccountException();
-            }
-            String[] split = myToken.getSignature().split("_");
-            String tokens = split[0];
-            String account = split[1];
-            String author = split[2];
-            String type = split[3];
-            String times = split[4];
-
-//            密钥是否是本系统签发
-            String t = Base64Util.decode(times);
-            String s = Base64Util.decode(author);
-            s = Algorithm.en(s);
-            t = "The survival of the dead " + t;
-            if (!t.equals(s)) {
-                //请从新登录;
-                throw new UnknownAccountException();
-            }
-//        密钥是否过期
-            long endTimes = Long.parseLong(Base64Util.decode(times));
+        if (myToken.getSignature() == null || myToken.getSignature().isEmpty()) {
+            //请从新登录;
+            log.info("令牌为空");
+            throw new UnknownAccountException();
+        }
+        ResponseResult<TokenModel> result = tkInterface.getByToken(myToken.getSignature());
+        if (result.isSuccess()) {
+//            如果token存在判断是否过期
             long now_times = System.currentTimeMillis();
-            if (endTimes <= 0) {
-                //请从新登录;
+            if (result.getData().getEndTimes() <= 0 || result.getData().getEndTimes() < now_times) {
+//                密钥过期,请从新登录;
+                log.info("令牌过期");
                 throw new UnknownAccountException();
             }
-            if (endTimes < now_times) {
-//                密钥过期
-                //请从新登录;
+
+//            判断是否是作废的令牌
+            if (result.getData().getIsUse().equals("Y")) {
+//                令牌已作废
+                log.info("令牌已用过");
                 throw new UnknownAccountException();
             }
-//            ResponseResult<AccountModel> result1 = anInterface.getAccount(Base64Util.decode(account));
-//            if (!result1.isSuccess()) {
-//                请从新登录;
-//                throw new UnknownAccountException();
-//            }
-            myToken.setUsername(Base64Util.decode(account));
+            myToken.setUsername(result.getData().getAccount());
             return new SimpleAuthenticationInfo(
                     myToken,
                     myToken.getSignature(),
                     getName()
             );
+        } else {
+            if (myToken.getUsername() != null && !myToken.getUsername().isEmpty()) {
+                return new SimpleAuthenticationInfo(
+                        myToken,
+                        myToken.getSignature(),
+                        getName()
+                );
+            } else
+                //请从新登录;
+                throw new UnknownAccountException();
         }
     }
 

@@ -15,14 +15,18 @@ public class BonusModel {
     private Double condition;
 
     public BonusModel() {
+        super();
     }
 
     public BonusModel(String account, Date starttime, Date endtime, Double money, Double condition) {
         this.account = account;
-        this.starttime = starttime;
-        this.endtime = endtime;
+        if (starttime != null)
+            this.starttime = (Date) starttime.clone();
+        if (endtime != null)
+            this.endtime = (Date) endtime.clone();
         this.money = money;
-        this.condition = condition;
+        if (condition != null)
+            this.condition = condition;
     }
 
     public String getAccount() {
@@ -34,19 +38,21 @@ public class BonusModel {
     }
 
     public Date getStarttime() {
-        return starttime;
+        return (Date) starttime.clone();
     }
 
     public void setStarttime(Date starttime) {
-        this.starttime = starttime;
+        if (starttime != null)
+            this.starttime = (Date) starttime.clone();
     }
 
     public Date getEndtime() {
-        return endtime;
+        return (Date) endtime.clone();
     }
 
     public void setEndtime(Date endtime) {
-        this.endtime = endtime;
+        if (endtime != null)
+            this.endtime = (Date) endtime.clone();
     }
 
     public Double getMoney() {
@@ -62,7 +68,8 @@ public class BonusModel {
     }
 
     public void setCondition(Double condition) {
-        this.condition = condition;
+        if (condition != null)
+            this.condition = condition;
     }
 
     @Override
