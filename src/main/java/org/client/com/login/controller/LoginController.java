@@ -4,7 +4,6 @@ import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.session.SessionException;
 import org.apache.shiro.subject.Subject;
 import org.client.com.MyUsernamePasswordToken;
-import org.client.com.api.AccountInterface;
 import org.client.com.api.TokenInterface;
 import org.client.com.api.model.TokenModel;
 import org.client.com.login.model.LoginModel;
@@ -16,7 +15,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.Cookie;
@@ -33,12 +35,10 @@ public class LoginController {
             .getLogger(LoginController.class);
 
     @Autowired
-    private AccountInterface loginInterface;
-    @Autowired
     private TokenInterface tkInterface;
 
     @GetMapping("/tologin")
-    public ModelAndView tologin(){
+    public ModelAndView tologin() {
         return new ModelAndView("/login/login");
     }
 
@@ -76,7 +76,7 @@ public class LoginController {
                 cookie.setPath("/");
                 cookie.setMaxAge(60);
                 response.addCookie(cookie);
-                return new ModelAndView(redirectUtil.getRedirect() + "/home/init?name="+model.getUsername());
+                return new ModelAndView(redirectUtil.getRedirect() + "/home/init?name=" + model.getUsername());
             } else {
                 response.setHeader("message", "令牌出错");
                 return new ModelAndView(redirectUtil.getRedirect() + "/index");

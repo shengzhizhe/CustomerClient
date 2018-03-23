@@ -4,10 +4,9 @@ import feign.FeignException;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.client.com.api.AccountInterface;
+import org.client.com.api.model.AccountModel;
 import org.client.com.register.model.RegisterModel;
 import org.client.com.util.resultJson.ResponseResult;
-import org.json.JSONException;
-import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.validation.BindingResult;
@@ -50,14 +49,13 @@ public class RegisterController {
                 return result;
             }
 
-            JSONObject json = new JSONObject();
-            json.put("account", model.getAccount());
-            json.put("acctype", 1);
-            json.put("level", "1");
-            json.put("password", model.getPassword());
-            json.put("source", "移动客户端注册");
+            AccountModel model1 = new AccountModel();
+            model1.setAccount(model.getAccount());
+            model1.setPassword(model.getPassword());
+            model1.setLevel("1");
+            model1.setSource("移动端注册");
 
-            ResponseResult responseResult = anInterface.register(json);
+            ResponseResult responseResult = anInterface.register(model1);
             if (result.isSuccess()) {
                 result.setSuccess(true);
                 result.setMessage("注册成功");
@@ -70,10 +68,6 @@ public class RegisterController {
         } catch (FeignException f) {
             result.setSuccess(false);
             result.setMessage("服务通讯异常");
-            return result;
-        } catch (JSONException j) {
-            result.setSuccess(false);
-            result.setMessage("json转换异常");
             return result;
         } catch (Exception e) {
             result.setSuccess(false);

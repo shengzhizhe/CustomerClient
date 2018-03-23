@@ -29,7 +29,7 @@ public class Application {
     public AccountInterface anInterface() {
         AccountInterface accountInterface = Feign.builder().encoder(new JacksonEncoder())
                 .decoder(new JacksonDecoder())
-                .target(AccountInterface.class, "http://39.106.33.113:9002/account");
+                .target(AccountInterface.class, "http://192.168.1.170:9003");
         return accountInterface;
     }
 
