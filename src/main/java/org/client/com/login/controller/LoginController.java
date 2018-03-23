@@ -59,11 +59,11 @@ public class LoginController {
             HttpServletResponse response) {
 
         ResponseResult<LoginModel> result = new ResponseResult<>();
-        if (bindingResult.hasErrors()) {
-            result.setSuccess(false);
-            result.setMessage(bindingResult.getFieldError().getDefaultMessage());
-            return result;
-        }
+//        if (bindingResult.hasErrors()) {
+//            result.setSuccess(false);
+//            result.setMessage(bindingResult.getFieldError().getDefaultMessage());
+//            return result;
+//        }
 
         //验证用户和令牌的有效性
         MyUsernamePasswordToken token = new MyUsernamePasswordToken(model.getUsername(),

@@ -5,7 +5,9 @@ import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
+import org.client.com.api.AccountInterface;
 import org.client.com.api.TokenInterface;
+import org.client.com.api.model.AccountModel;
 import org.client.com.api.model.TokenModel;
 import org.client.com.util.resultJson.ResponseResult;
 import org.slf4j.Logger;
@@ -23,6 +25,8 @@ public class MyShiroRealm2 extends AuthorizingRealm {
 
     @Autowired
     private TokenInterface tkInterface;
+    @Autowired
+    private AccountInterface anInterface;
 
     @Override
     public String getName() {
@@ -63,11 +67,15 @@ public class MyShiroRealm2 extends AuthorizingRealm {
             );
         } else {
             if (myToken.getUsername() != null && !myToken.getUsername().isEmpty()) {
-                return new SimpleAuthenticationInfo(
-                        myToken,
-                        myToken.getSignature(),
-                        getName()
-                );
+                ResponseResult<AccountModel> account = anInterface.getAccount(myToken.getUsername());
+                if (account.isSuccess())
+                    return new SimpleAuthenticationInfo(
+                            account.getData(),
+                            account.getData().getPassword(),
+                            getName()
+                    );
+                else
+                    throw new UnknownAccountException();
             } else
                 //请从新登录;
                 throw new UnknownAccountException();
