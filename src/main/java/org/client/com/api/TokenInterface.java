@@ -10,8 +10,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 public interface TokenInterface {
 
-    @Headers("Content-Type: application/json")
+    @Headers("Content-Type: application/json;charset=UTF-8")
     @RequestLine("POST /token/token")
+    @Body("model={model}")
     ResponseResult<TokenModel> add(@RequestBody TokenModel model);
 
     @RequestLine("POST /token/updateToken")

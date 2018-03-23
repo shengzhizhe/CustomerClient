@@ -37,7 +37,7 @@ public class Application {
     public TokenInterface tokenInterface() {
         TokenInterface tkInterface = Feign.builder().encoder(new JacksonEncoder())
                 .decoder(new JacksonDecoder())
-                .target(TokenInterface.class, "http://39.106.33.113:9002/account");
+                .target(TokenInterface.class, "http://192.168.1.170:9003");
         return tkInterface;
     }
 
