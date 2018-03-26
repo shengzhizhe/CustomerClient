@@ -3,7 +3,44 @@
   <component name="ChangeListManager">
     <list default="true" id="6fbf86d8-48b8-4cad-97e3-cbb9a3051f85" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/a1.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/client.log" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cloudclient.log" afterPath="" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/client/com/Application.java" afterPath="$PROJECT_DIR$/src/main/java/org/client/com/Application.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/client/com/MyAccessControlFilter.java" afterPath="$PROJECT_DIR$/src/main/java/org/client/com/MyAccessControlFilter.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/client/com/MyShiroRealm.java" afterPath="$PROJECT_DIR$/src/main/java/org/client/com/MyShiroRealm.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/client/com/MyShiroRealm2.java" afterPath="$PROJECT_DIR$/src/main/java/org/client/com/MyShiroRealm2.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/client/com/api/AccountInterface.java" afterPath="$PROJECT_DIR$/src/main/java/org/client/com/server/AccountInterface.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/client/com/api/TokenInterface.java" afterPath="$PROJECT_DIR$/src/main/java/org/client/com/server/TokenInterface.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/client/com/api/model/AccountModel.java" afterPath="$PROJECT_DIR$/src/main/java/org/client/com/server/model/AccountModel.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/client/com/api/model/TokenModel.java" afterPath="$PROJECT_DIR$/src/main/java/org/client/com/server/model/TokenModel.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/client/com/bindphone/controller/BindphoneController.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/client/com/bonus/controller/BonusController.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/client/com/bonus/model/BonusModel.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/client/com/changeemail/controller/ChangeEmailController.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/client/com/changepassword/controller/Changepass.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/client/com/coupon/controller/CouponController.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/client/com/home/controller/HomeController.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/client/com/idcard/controller/IdcardController.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/client/com/introduction/controller/IntroductionController.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/client/com/login/controller/LoginController.java" afterPath="$PROJECT_DIR$/src/main/java/org/client/com/login/controller/LoginController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/client/com/pay/controller/PayController.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/client/com/peraddress/controller/AddressController.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/client/com/perbill/controller/BillController.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/client/com/perchange/controller/ChangeController.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/client/com/perinformation/controller/InformationController.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/client/com/pernews/controller/NewsController.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/client/com/perorder/controller/OrderController.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/client/com/personal/controller/PersonalController.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/client/com/question/controller/QuestionController.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/client/com/register/controller/RegisterController.java" afterPath="$PROJECT_DIR$/src/main/java/org/client/com/register/controller/RegisterController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/client/com/safety/controller/SafetyController.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/client/com/setpay/controller/SetpayController.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/client/com/sort/controller/SortController.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/client/com/sreach/controller/SearchController.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/client/com/success/controller/SuccessController.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/client/com/token/model/TokenModel.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/client/com/api/AccountInterfaceTest.java" afterPath="$PROJECT_DIR$/src/test/java/org/client/com/server/AccountInterfaceTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,48 +51,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="MyShiroRealm2.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/client/com/MyShiroRealm2.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="45" column="64" lean-forward="true" selection-start-line="45" selection-start-column="64" selection-end-line="45" selection-end-column="64" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TokenInterface.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/client/com/api/TokenInterface.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="22" column="31" lean-forward="false" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Application.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/client/com/Application.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="302">
-              <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MyModularRealmAuthenticator.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/client/com/MyModularRealmAuthenticator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
-              <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -96,6 +92,8 @@
         <option value="$PROJECT_DIR$/src/main/java/org/client/com/util/base64/Base64Test.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/client/com/MyShiroRealm2.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/client/com/Application.java" />
+        <option value="$PROJECT_DIR$/CustomerClient.log" />
+        <option value="$PROJECT_DIR$/client.log" />
       </list>
     </option>
   </component>
@@ -471,7 +469,14 @@
       <option name="project" value="LOCAL" />
       <updated>1521797582172</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="调整接口">
+      <created>1522027435529</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1522027435529</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -481,7 +486,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1874" height="1096" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -498,7 +502,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22601984" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22601984" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -563,7 +567,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/client/com/api/AccountInterface.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/client/com/server/AccountInterface.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
           <caret line="15" column="43" lean-forward="true" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
@@ -579,14 +583,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/client/com/api/model/AccountModel.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/client/com/server/model/AccountModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding>
+            <element signature="e#1761#1762#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/client/com/api/AccountInterface.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/client/com/server/AccountInterface.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
           <caret line="20" column="26" lean-forward="false" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
@@ -662,25 +669,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/client/com/token/model/TokenModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/doc/doc.text">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/client/com/email/controller/EmailController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="28" column="53" lean-forward="false" selection-start-line="28" selection-start-column="53" selection-end-line="28" selection-end-column="53" />
         </state>
       </provider>
     </entry>
@@ -713,10 +706,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/client/com/api/model/AccountModel.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/client/com/server/model/AccountModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="183">
           <caret line="92" column="11" lean-forward="false" selection-start-line="92" selection-start-column="11" selection-end-line="92" selection-end-column="11" />
+          <folding>
+            <element signature="e#1761#1762#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -728,7 +724,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/client/com/api/AccountInterface.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/client/com/server/AccountInterface.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="20" column="4" lean-forward="false" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="26" />
@@ -736,10 +732,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/client/com/api/model/TokenModel.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/client/com/server/model/TokenModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -754,6 +751,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -777,6 +775,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -799,12 +798,12 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/org/client/com/MyShiroRealm2.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="45" column="64" lean-forward="true" selection-start-line="45" selection-start-column="64" selection-end-line="45" selection-end-column="64" />
+          <caret line="45" column="64" lean-forward="false" selection-start-line="45" selection-start-column="64" selection-end-line="45" selection-end-column="64" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/client/com/api/TokenInterface.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/client/com/server/TokenInterface.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
           <caret line="22" column="31" lean-forward="false" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
@@ -814,10 +813,79 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/client/com/Application.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+        <state relative-caret-position="140">
+          <caret line="28" column="43" lean-forward="true" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/client/com/bindphone/controller/BindphoneController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/client/com/email/controller/EmailController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="28" column="53" lean-forward="false" selection-start-line="28" selection-start-column="53" selection-end-line="28" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/client/com/home/controller/HomeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/client/com/token/model/TokenModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/client/com/success/controller/SuccessController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/client/com/sreach/controller/SearchController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CustomerClient.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/a1.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
   </component>
