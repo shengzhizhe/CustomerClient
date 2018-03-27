@@ -80,6 +80,8 @@ public class ShiroConfiguration {
         filterChainDefinitionMap.put("/v2/api-docs", "anon");
         filterChainDefinitionMap.put("/", "anon");
 
+        filterChainDefinitionMap.put("/defaultKaptcha", "anon");
+
         filterChainDefinitionMap.put("/favicon.ico", "anon");
         filterChainDefinitionMap.put("/**", "myAccessControlFilter");
 

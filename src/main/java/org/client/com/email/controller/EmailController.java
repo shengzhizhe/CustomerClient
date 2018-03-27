@@ -35,7 +35,7 @@ public class EmailController {
             httpMethod = "POST",
             consumes = MediaType.APPLICATION_JSON_UTF8_VALUE,
             produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    @RequestMapping(value = "/toemail",
+    @RequestMapping(value = "/verification",
             method = RequestMethod.POST,
             consumes = MediaType.APPLICATION_JSON_UTF8_VALUE,
             produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
