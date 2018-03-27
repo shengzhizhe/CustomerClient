@@ -27,7 +27,11 @@ public class Swagger2 {
     }
 
     private ApiInfo apiInfo() {
-        return new ApiInfoBuilder().title("用户客户端系统").description("RESTful接口详情")
-                .termsOfServiceUrl("http://localhost:8998/swagger-ui.html").contact("LD").version("1.0").build();
+        return new ApiInfoBuilder().title("用户客户端系统")
+                .description("RESTful接口详情")
+                .termsOfServiceUrl("http://localhost:8998/swagger-ui.html")
+                .contact("LD")
+                .version("1.0")
+                .build();
     }
 }

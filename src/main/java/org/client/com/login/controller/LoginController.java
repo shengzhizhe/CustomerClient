@@ -6,11 +6,10 @@ import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.session.SessionException;
 import org.apache.shiro.subject.Subject;
 import org.client.com.MyUsernamePasswordToken;
+import org.client.com.login.model.LoginModel;
 import org.client.com.server.TokenInterface;
 import org.client.com.server.model.TokenModel;
-import org.client.com.login.model.LoginModel;
 import org.client.com.util.base64.Base64Util;
-import org.client.com.util.redirect.RedirectUtil;
 import org.client.com.util.resultJson.ResponseResult;
 import org.client.com.util.uuidUtil.GetUuid;
 import org.slf4j.Logger;
@@ -19,7 +18,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -53,17 +51,17 @@ public class LoginController {
             method = RequestMethod.POST,
             consumes = MediaType.APPLICATION_JSON_UTF8_VALUE,
             produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public ResponseResult<LoginModel> loginIn(
+    public ResponseResult<LoginModel> login(
             @Valid @RequestBody LoginModel model,
             BindingResult bindingResult,
             HttpServletResponse response) {
 
         ResponseResult<LoginModel> result = new ResponseResult<>();
-//        if (bindingResult.hasErrors()) {
-//            result.setSuccess(false);
-//            result.setMessage(bindingResult.getFieldError().getDefaultMessage());
-//            return result;
-//        }
+        if (bindingResult.hasErrors()) {
+            result.setSuccess(false);
+            result.setMessage(bindingResult.getFieldError().getDefaultMessage());
+            return result;
+        }
 
         //验证用户和令牌的有效性
         MyUsernamePasswordToken token = new MyUsernamePasswordToken(model.getUsername(),
@@ -105,25 +103,18 @@ public class LoginController {
     }
 
     @GetMapping("/logout")
-    public ModelAndView logout(HttpServletRequest request,
-                               HttpServletResponse response) {
-        RedirectUtil redirectUtil = new RedirectUtil();
+    public void logout(HttpServletRequest request,
+                       HttpServletResponse response) {
         try {
-            HttpServletRequest httpServletRequest = (HttpServletRequest) request;
-            Cookie[] cookies = httpServletRequest.getCookies();
-            String token_str = "";
+            Cookie[] cookies = request.getCookies();
             for (int i = 0; i < cookies.length; i++) {
                 if (cookies[i].getName().equals("token")) {
-                    token_str = cookies[i].getValue();
-                    continue;
+                    tkInterface.updateToken(cookies[i].getValue());
+                    Cookie cookie = new Cookie("token", null);
+                    cookie.setPath("/");
+                    cookie.setMaxAge(0);
+                    response.addCookie(cookie);
                 }
-            }
-            if (token_str != null && !token_str.isEmpty()) {
-                ResponseResult<TokenModel> result = tkInterface.updateToken(token_str);
-                Cookie cookie = new Cookie("token", null);
-                cookie.setPath("/");
-                cookie.setMaxAge(0);
-                response.addCookie(cookie);
             }
             Subject subject = SecurityUtils.getSubject();
             if (subject.isAuthenticated()) {
@@ -135,7 +126,6 @@ public class LoginController {
         } catch (SessionException e) {
             e.printStackTrace();
         }
-        return new ModelAndView(redirectUtil.getRedirect() + "/index");
     }
 
 }
