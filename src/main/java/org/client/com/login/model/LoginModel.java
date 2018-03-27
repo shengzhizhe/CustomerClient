@@ -4,8 +4,9 @@ import org.hibernate.validator.constraints.NotBlank;
 
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
+import java.io.Serializable;
 
-public class LoginModel {
+public class LoginModel implements Serializable{
 
     @NotBlank(message = "账户不能为空")
     @Size(message = "密码长度为8-20", min = 8, max = 20)
