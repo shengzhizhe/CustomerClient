@@ -54,9 +54,7 @@ public class ShiroConfiguration {
         // 必须设置 SecurityManager
         shiroFilterFactoryBean.setSecurityManager(securityManager);
         // 如果不设置默认会自动寻找Web工程根目录下的"/login.jsp"页面
-        shiroFilterFactoryBean.setLoginUrl("/index");
-        // 登录成功后要跳转的链接
-        shiroFilterFactoryBean.setSuccessUrl("/home/init");
+        shiroFilterFactoryBean.setLoginUrl("/home");
         //未授权界面;
         shiroFilterFactoryBean.setUnauthorizedUrl("/403");
 
@@ -74,8 +72,14 @@ public class ShiroConfiguration {
 
         filterChainDefinitionMap.put("/register/**", "anon");
         filterChainDefinitionMap.put("/login/**", "anon");
-        filterChainDefinitionMap.put("/swagger-ui**", "anon");
+
+        filterChainDefinitionMap.put("/swagger**", "anon");
+        filterChainDefinitionMap.put("/images**", "anon");
+        filterChainDefinitionMap.put("/webjars/springfox-swagger-ui/**", "anon");
+        filterChainDefinitionMap.put("/configuration/**", "anon");
         filterChainDefinitionMap.put("/v2/api-docs", "anon");
+        filterChainDefinitionMap.put("/", "anon");
+
         filterChainDefinitionMap.put("/favicon.ico", "anon");
         filterChainDefinitionMap.put("/**", "myAccessControlFilter");
 
