@@ -4,6 +4,7 @@ import feign.Feign;
 import feign.jackson.JacksonDecoder;
 import feign.jackson.JacksonEncoder;
 import org.client.com.server.AccountInterface;
+import org.client.com.server.PersonalDataInterface;
 import org.client.com.server.TokenInterface;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -39,6 +40,14 @@ public class Application {
                 .decoder(new JacksonDecoder())
                 .target(TokenInterface.class, "http://39.106.33.113:9002/account");
         return tkInterface;
+    }
+
+    @Bean
+    public PersonalDataInterface personalDataInterface() {
+        PersonalDataInterface interfaces = Feign.builder().encoder(new JacksonEncoder())
+                .decoder(new JacksonDecoder())
+                .target(PersonalDataInterface.class, "http://39.106.33.113:9004/customer");
+        return interfaces;
     }
 
     @Bean

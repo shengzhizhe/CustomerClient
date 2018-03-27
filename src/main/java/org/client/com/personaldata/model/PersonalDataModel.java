@@ -14,16 +14,19 @@ import java.io.Serializable;
  */
 public class PersonalDataModel implements Serializable {
 
-    @NotBlank(message = "主键丢失", groups = Update.class)
+    //    @NotBlank(message = "主键丢失", groups = Update.class)
     private String uuid;
+
+    //    @NotBlank(message = "数据错误", groups = Update.class)
+    private String accId;
 
     @NotBlank(message = "名称不能为空", groups = {Add.class, Update.class})
     @Size(min = 1, max = 5, message = "名称长度为1-5位之间", groups = {Add.class, Update.class})
-    @Pattern(regexp = "[\\u4E00-\\u9FA5]+", message = "名称必须是汉字", groups = {Add.class, Update.class})
+    @Pattern(regexp = "^[\\u4E00-\\u9FA5]$+", message = "名称必须是汉字", groups = {Add.class, Update.class})
     private String userName;
 
-    @Size(min = 0, max = 2, message = "性别长度只有一位", groups = {Add.class, Update.class})
-    @Pattern(regexp = "[M,F]", message = "性别选择错误", groups = {Add.class, Update.class})
+    @Size(min = 0, max = 2, message = "性别选择错误", groups = {Add.class, Update.class})
+    @Pattern(regexp = "^[M,F]$", message = "性别选择错误", groups = {Add.class, Update.class})
     private String sex;
 
     @Pattern(regexp = "(^[1-9]\\d{5}(18|19|([23]\\d))\\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\\d{3}[0-9Xx]$)" +
@@ -34,9 +37,12 @@ public class PersonalDataModel implements Serializable {
     @Pattern(regexp = "^1(3|4|5|7|8)\\d{9}$", message = "手机号格式错误", groups = {Add.class, Update.class})
     private String phone;
 
-    @Pattern(regexp = "^[^&#<>'\\\"\\\\|+%\\\\\\\\]*$",message = "常驻地址不能包含特殊符号", groups = {Add.class, Update.class})
+    @Pattern(regexp = "^[^&#<>'\\\"\\\\|+%\\\\\\\\]*$", message = "常驻地址不能包含特殊符号",
+            groups = {Add.class, Update.class})
     private String permanentAddress;
 
+    @Pattern(regexp = "^(19|20)\\d{2}-(1[0-2]|0?[1-9])-(0?[1-9]|[1-2][0-9]|3[0-1])$",
+            message = "生日格式错误,正确格式为：xxxx-xx-xx", groups = {Add.class, Update.class})
     private String birthday;
 
     public String getUuid() {
@@ -95,12 +101,31 @@ public class PersonalDataModel implements Serializable {
         this.birthday = birthday;
     }
 
+    public String getAccId() {
+        return accId;
+    }
+
+    public void setAccId(String accId) {
+        this.accId = accId;
+    }
+
     public PersonalDataModel() {
         super();
     }
 
-    public PersonalDataModel(String uuid, String userName, String sex, String IDNumber, String phone, String permanentAddress, String birthday) {
+    public PersonalDataModel(String accId, String userName, String sex, String IDNumber, String phone, String permanentAddress, String birthday) {
+        this.accId = accId;
+        this.userName = userName;
+        this.sex = sex;
+        this.IDNumber = IDNumber;
+        this.phone = phone;
+        this.permanentAddress = permanentAddress;
+        this.birthday = birthday;
+    }
+
+    public PersonalDataModel(String uuid, String accId, String userName, String sex, String IDNumber, String phone, String permanentAddress, String birthday) {
         this.uuid = uuid;
+        this.accId = accId;
         this.userName = userName;
         this.sex = sex;
         this.IDNumber = IDNumber;
@@ -113,6 +138,7 @@ public class PersonalDataModel implements Serializable {
     public String toString() {
         return "PersonalDataModel{" +
                 "uuid='" + uuid + '\'' +
+                ", accId='" + accId + '\'' +
                 ", userName='" + userName + '\'' +
                 ", sex='" + sex + '\'' +
                 ", IDNumber='" + IDNumber + '\'' +
