@@ -75,6 +75,7 @@ public class ShiroConfiguration {
         filterChainDefinitionMap.put("/register/**", "anon");
         filterChainDefinitionMap.put("/login/**", "anon");
         filterChainDefinitionMap.put("/swagger-ui**", "anon");
+        filterChainDefinitionMap.put("/v2/api-docs", "anon");
         filterChainDefinitionMap.put("/favicon.ico", "anon");
         filterChainDefinitionMap.put("/**", "myAccessControlFilter");
 
