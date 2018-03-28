@@ -2,15 +2,11 @@ package org.client.com.cargoaddress.controller;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.client.com.cargoaddress.model.ADD;
-import org.client.com.server.model.CargoAddressModel;
-import org.client.com.cargoaddress.model.UPDATE;
 import org.client.com.server.CustomerInterface;
+import org.client.com.server.model.CargoAddressModel;
 import org.client.com.util.resultJson.ResponseResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -47,15 +43,7 @@ public class CargoAddressController {
             method = RequestMethod.POST,
             consumes = MediaType.APPLICATION_JSON_UTF8_VALUE,
             produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public ResponseResult<CargoAddressModel> save(@Validated(value = ADD.class) @RequestBody CargoAddressModel model,
-                                                  BindingResult bindingResult) {
-        ResponseResult<CargoAddressModel> result = new ResponseResult<>();
-
-        if (bindingResult.hasErrors()) {
-            result.setSuccess(false);
-            result.setMessage(bindingResult.getFieldError().getDefaultMessage());
-            return result;
-        }
+    public ResponseResult<CargoAddressModel> save(@RequestBody CargoAddressModel model) {
         return customerInterface.crgoaddress_add(model);
     }
 
@@ -68,15 +56,7 @@ public class CargoAddressController {
             method = RequestMethod.PUT,
             consumes = MediaType.APPLICATION_JSON_UTF8_VALUE,
             produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public ResponseResult<CargoAddressModel> update(@Validated(value = UPDATE.class) @RequestBody CargoAddressModel model,
-                                                    BindingResult bindingResult) {
-        ResponseResult<CargoAddressModel> result = new ResponseResult<>();
-
-        if (bindingResult.hasErrors()) {
-            result.setSuccess(false);
-            result.setMessage(bindingResult.getFieldError().getDefaultMessage());
-            return result;
-        }
+    public ResponseResult<CargoAddressModel> update(@RequestBody CargoAddressModel model) {
         return customerInterface.crgoaddress_update(model);
     }
 

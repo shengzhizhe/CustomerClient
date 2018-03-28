@@ -36,7 +36,7 @@ public interface CustomerInterface {
 
     /*****************************************************收货地址*************************************************************/
 
-    @RequestLine("GET /crgoaddress/{id}")
+    @RequestLine("GET /crgoaddress/id/{id}")
     ResponseResult<List<CargoAddressModel>> crgoaddress_findByAccId(@PathVariable("id") String id);
 
     @Headers("Content-Type: application/json;charset=UTF-8")
@@ -44,7 +44,7 @@ public interface CustomerInterface {
     @Body("model={model}")
     ResponseResult<CargoAddressModel> crgoaddress_add(@RequestBody CargoAddressModel model);
 
-    @RequestLine("DELETE /crgoaddress/{id}")
+    @RequestLine("DELETE /crgoaddress/id/{id}")
     ResponseResult<CargoAddressModel> crgoaddress_delById(@PathVariable("id") String id);
 
     @Headers("Content-Type: application/json;charset=UTF-8")

@@ -1,12 +1,14 @@
 package org.client.com.server.model;
 
+import java.io.Serializable;
+
 /**
  * @author ld
  * @name 收货地址
  * @table
  * @remarks
  */
-public class CargoAddressModel {
+public class CargoAddressModel implements Serializable{
 
     private String uuid;
     private String accId;
