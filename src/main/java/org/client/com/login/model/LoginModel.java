@@ -1,21 +1,22 @@
 package org.client.com.login.model;
 
+import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
 
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
 
-public class LoginModel implements Serializable{
+public class LoginModel implements Serializable {
 
     @NotBlank(message = "账户不能为空")
     @Size(message = "密码长度为8-20", min = 8, max = 20)
-    @Pattern(regexp = "^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{8,20}$", message = "密码由(a-zA-Z0-9)组成,长度8-20")
+    @Email(message = "不是标准的email格式")
     private String username;
 
     @NotBlank(message = "密码不能为空，并且不能包含空格")
     @Size(message = "密码长度为8-20", min = 8, max = 20)
-    @Pattern(regexp = "^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{8,20}$", message = "密码由(a-zA-Z0-9)组成,长度8-20")
+    @Pattern(regexp = "^[0-9a-zA-Z]*$", message = "密码由(a-zA-Z0-9)组成,长度8-20")
     private String password;
 
     private String yzm;

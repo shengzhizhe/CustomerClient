@@ -9,6 +9,7 @@ import org.client.com.server.AccountInterface;
 import org.client.com.server.TokenInterface;
 import org.client.com.server.model.AccountModel;
 import org.client.com.server.model.TokenModel;
+import org.client.com.util.base64.Base64Util;
 import org.client.com.util.resultJson.ResponseResult;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -71,7 +72,7 @@ public class MyShiroRealm2 extends AuthorizingRealm {
                 if (account.isSuccess())
                     return new SimpleAuthenticationInfo(
                             account.getData(),
-                            account.getData().getPassword(),
+                            Base64Util.decode(account.getData().getPassword()),
                             getName()
                     );
                 else

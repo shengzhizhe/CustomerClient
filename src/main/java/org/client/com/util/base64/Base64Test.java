@@ -7,7 +7,7 @@ public class Base64Test {
     public static void main(String[] args) {
         try {
 
-            byte[] bytes = Base64Utils.decode("MTIzNDU2Nzhh".getBytes("UTF-8"));
+            byte[] bytes = Base64Utils.decode("TVRJek5EVTJOMkZC".getBytes("UTF-8"));
             System.out.println(new String(bytes, "UTF-8"));
         } catch (Exception e) {
             e.printStackTrace();

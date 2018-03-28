@@ -95,7 +95,7 @@ public class LoginController {
                 return result;
             }
         } catch (Exception e) {
-            log.info("e", e.getMessage());
+            log.info(e.getMessage());
             result.setSuccess(false);
             result.setMessage("账号或密码错误");
             return result;

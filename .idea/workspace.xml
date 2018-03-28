@@ -3,9 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="6fbf86d8-48b8-4cad-97e3-cbb9a3051f85" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/client/com/GlobalExceptionHandler.java" afterPath="$PROJECT_DIR$/src/main/java/org/client/com/GlobalExceptionHandler.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/client/com/personaldata/controller/PersonalDataController.java" afterPath="$PROJECT_DIR$/src/main/java/org/client/com/personaldata/controller/PersonalDataController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/client/com/server/CustomerInterface.java" afterPath="$PROJECT_DIR$/src/main/java/org/client/com/server/CustomerInterface.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/client/com/MyShiroRealm2.java" afterPath="$PROJECT_DIR$/src/main/java/org/client/com/MyShiroRealm2.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/client/com/login/controller/LoginController.java" afterPath="$PROJECT_DIR$/src/main/java/org/client/com/login/controller/LoginController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/client/com/login/model/LoginModel.java" afterPath="$PROJECT_DIR$/src/main/java/org/client/com/login/model/LoginModel.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/client/com/util/base64/Base64Test.java" afterPath="$PROJECT_DIR$/src/main/java/org/client/com/util/base64/Base64Test.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,31 +18,51 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CustomerInterface.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/client/com/server/CustomerInterface.java">
+      <file leaf-file-name="LoginModel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/client/com/login/model/LoginModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+            <state relative-caret-position="270">
+              <caret line="18" column="37" lean-forward="false" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PersonalDataController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/client/com/personaldata/controller/PersonalDataController.java">
+      <file leaf-file-name="LoginController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/client/com/login/controller/LoginController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="33" column="5" lean-forward="true" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+            <state relative-caret-position="191">
+              <caret line="58" column="67" lean-forward="false" selection-start-line="58" selection-start-column="67" selection-end-line="58" selection-end-column="67" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GlobalExceptionHandler.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/client/com/GlobalExceptionHandler.java">
+      <file leaf-file-name="MyShiroRealm2.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/client/com/MyShiroRealm2.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="299">
+              <caret line="49" column="56" lean-forward="true" selection-start-line="49" selection-start-column="56" selection-end-line="49" selection-end-column="56" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Base64Test.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/client/com/util/base64/Base64Test.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="162">
-              <caret line="257" column="72" lean-forward="true" selection-start-line="257" selection-start-column="72" selection-end-line="257" selection-end-column="72" />
+              <caret line="6" column="44" lean-forward="false" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RegisterModel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/client/com/register/model/RegisterModel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="19" column="37" lean-forward="false" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -89,15 +110,11 @@
         <option value="$PROJECT_DIR$/src/main/java/org/client/com/changepassword/controller/changepass.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/client/com/bonus/model/BonusModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/client/com/MyShiroRealm.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/client/com/register/model/RegisterModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/client/com/api/AccountInterface.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/client/com/register/controller/RegisterController.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/client/com/api/TokenInterface.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/client/com/util/base64/Base64Test.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/client/com/MyShiroRealm2.java" />
         <option value="$PROJECT_DIR$/CustomerClient.log" />
         <option value="$PROJECT_DIR$/client.log" />
-        <option value="$PROJECT_DIR$/src/main/java/org/client/com/login/controller/LoginController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/doc.html" />
         <option value="$PROJECT_DIR$/src/main/java/org/client/com/index/IndexController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/index.html" />
@@ -112,7 +129,6 @@
         <option value="$PROJECT_DIR$/src/main/java/org/client/com/util/verification/VerificationUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/client/com/verification/controller/Verification.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/client/com/KaptchaConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/client/com/login/model/LoginModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/client/com/util/exception/model/ExceptionModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/client/com/util/resultJson/ResponseResult.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/client/com/server/PersonalDataInterface.java" />
@@ -128,6 +144,11 @@
         <option value="$PROJECT_DIR$/src/main/java/org/client/com/personaldata/controller/PersonalDataController.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/client/com/server/CustomerInterface.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/client/com/GlobalExceptionHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/client/com/register/model/RegisterModel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/client/com/login/model/LoginModel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/client/com/login/controller/LoginController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/client/com/util/base64/Base64Test.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/client/com/MyShiroRealm2.java" />
       </list>
     </option>
   </component>
@@ -277,7 +298,65 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="login" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CustomerClient" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CustomerClient" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="register" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CustomerClient" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CustomerClient" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="register" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CustomerClient" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CustomerClient" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="register" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CustomerClient" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CustomerClient" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CustomerClient" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CustomerClient" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CustomerClient" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CustomerClient" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+              <item name="base64" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -325,7 +404,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Application">
+  <component name="RunManager" selected="Application.Base64Test">
     <configuration default="true" type="Applet" factoryName="Applet">
       <module />
       <option name="WIDTH" value="400" />
@@ -450,8 +529,8 @@
     </list>
     <recent_temporary>
       <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Application.Application" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Base64Test" />
+        <item index="0" class="java.lang.String" itemvalue="Application.Base64Test" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Application" />
       </list>
     </recent_temporary>
   </component>
@@ -693,7 +772,14 @@
       <option name="project" value="LOCAL" />
       <updated>1522219678347</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="调整其它">
+      <created>1522222035721</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1522222035721</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -751,16 +837,16 @@
     <MESSAGE value="增加接口约定" />
     <MESSAGE value="调整model位置" />
     <MESSAGE value="去掉bean验证，改由服务进行验证" />
-    <option name="LAST_COMMIT_MESSAGE" value="去掉bean验证，改由服务进行验证" />
+    <MESSAGE value="调整其它" />
+    <option name="LAST_COMMIT_MESSAGE" value="调整其它" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="17" />
+      <option name="time" value="22" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/client/com/home/controller/HomeController.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/org/client/com/token/model/TokenModel.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/org/client/com/success/controller/SuccessController.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/org/client/com/sreach/controller/SearchController.java" />
@@ -806,14 +892,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="599">
           <caret line="51" column="41" lean-forward="false" selection-start-line="51" selection-start-column="41" selection-end-line="51" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/client/com/register/controller/RegisterController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="31" column="61" lean-forward="false" selection-start-line="27" selection-start-column="4" selection-end-line="31" selection-end-column="61" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -884,14 +962,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/client/com/server/AccountInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="21" column="75" lean-forward="true" selection-start-line="18" selection-start-column="4" selection-end-line="21" selection-end-column="75" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/client/com/KaptchaConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="259">
@@ -928,22 +998,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="8" column="20" lean-forward="false" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/client/com/MyShiroRealm2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-505">
-          <caret line="44" column="9" lean-forward="false" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/client/com/util/resultJson/ResponseResult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="5" column="37" lean-forward="true" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
           <folding />
         </state>
       </provider>
@@ -1012,14 +1066,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/client/com/login/model/LoginModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="8" column="47" lean-forward="false" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/client/com/Application.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="351">
@@ -1032,14 +1078,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="217">
           <caret line="497" column="0" lean-forward="false" selection-start-line="497" selection-start-column="0" selection-end-line="497" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/client/com/register/model/RegisterModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-486">
-          <caret line="24" column="63" lean-forward="false" selection-start-line="24" selection-start-column="63" selection-end-line="24" selection-end-column="63" />
           <folding />
         </state>
       </provider>
@@ -1060,18 +1098,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/client/com/login/controller/LoginController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/client/com/GlobalExceptionHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="91" column="20" lean-forward="true" selection-start-line="91" selection-start-column="20" selection-end-line="91" selection-end-column="20" />
+        <state relative-caret-position="189">
+          <caret line="258" column="84" lean-forward="true" selection-start-line="258" selection-start-column="84" selection-end-line="258" selection-end-column="84" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/client/com/util/resultJson/ResponseResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/client/com/personaldata/controller/PersonalDataController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="33" column="5" lean-forward="true" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+        <state relative-caret-position="278">
+          <caret line="27" column="31" lean-forward="true" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
           <folding />
         </state>
       </provider>
@@ -1084,10 +1130,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/client/com/GlobalExceptionHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/client/com/login/model/LoginModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="37" lean-forward="false" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/client/com/server/AccountInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="383">
+          <caret line="21" column="33" lean-forward="false" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/client/com/register/controller/RegisterController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="57" column="60" lean-forward="false" selection-start-line="57" selection-start-column="60" selection-end-line="57" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/client/com/register/model/RegisterModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="19" column="37" lean-forward="false" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/client/com/util/base64/Base64Test.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
-          <caret line="257" column="72" lean-forward="true" selection-start-line="257" selection-start-column="72" selection-end-line="257" selection-end-column="72" />
+          <caret line="6" column="44" lean-forward="false" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/client/com/login/controller/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="58" column="67" lean-forward="false" selection-start-line="58" selection-start-column="67" selection-end-line="58" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/client/com/MyShiroRealm2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="49" column="56" lean-forward="true" selection-start-line="49" selection-start-column="56" selection-end-line="49" selection-end-column="56" />
           <folding />
         </state>
       </provider>
