@@ -4,7 +4,6 @@
     <list default="true" id="6fbf86d8-48b8-4cad-97e3-cbb9a3051f85" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/client/com/personaldata/controller/PersonalDataController.java" afterPath="$PROJECT_DIR$/src/main/java/org/client/com/personaldata/controller/PersonalDataController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/client/com/server/CustomerInterface.java" afterPath="$PROJECT_DIR$/src/main/java/org/client/com/server/CustomerInterface.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,8 +28,8 @@
       <file leaf-file-name="PersonalDataController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/client/com/personaldata/controller/PersonalDataController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="28" column="31" lean-forward="true" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
+            <state relative-caret-position="116">
+              <caret line="32" column="57" lean-forward="false" selection-start-line="32" selection-start-column="57" selection-end-line="32" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -123,8 +122,8 @@
         <option value="$PROJECT_DIR$/src/main/java/org/client/com/personaldata/model/PersonalDataModel.java" />
         <option value="$PROJECT_DIR$/src/main/resources/doc/接口风格约定.text" />
         <option value="$PROJECT_DIR$/src/main/resources/doc/参考.text" />
-        <option value="$PROJECT_DIR$/src/main/java/org/client/com/personaldata/controller/PersonalDataController.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/client/com/server/CustomerInterface.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/client/com/personaldata/controller/PersonalDataController.java" />
       </list>
     </option>
   </component>
@@ -689,7 +688,14 @@
       <option name="project" value="LOCAL" />
       <updated>1522216401553</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="增加接口约定">
+      <created>1522216789433</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1522216789433</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1077,8 +1083,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/client/com/personaldata/controller/PersonalDataController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="28" column="31" lean-forward="true" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
+        <state relative-caret-position="116">
+          <caret line="32" column="57" lean-forward="false" selection-start-line="32" selection-start-column="57" selection-end-line="32" selection-end-column="57" />
           <folding />
         </state>
       </provider>
