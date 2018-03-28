@@ -38,10 +38,10 @@ public class PersonalDataController {
 
     @ApiOperation(value = "修改个人资料",
             response = ResponseResult.class,
-            httpMethod = "POST",
+            httpMethod = "PUT",
             consumes = MediaType.APPLICATION_JSON_UTF8_VALUE,
             produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    @RequestMapping(value = "/personalData", method = RequestMethod.POST,
+    @RequestMapping(value = "/personalData", method = RequestMethod.PUT,
             consumes = MediaType.APPLICATION_JSON_UTF8_VALUE,
             produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseResult<PersonalDataModel> update(@Validated(value = Update.class) @RequestBody PersonalDataModel model,

@@ -14,10 +14,10 @@ import java.io.Serializable;
  */
 public class PersonalDataModel implements Serializable {
 
-    @NotBlank(message = "主键丢失", groups = Update.class)
+    //    @NotBlank(message = "主键丢失", groups = Update.class)
     private String uuid;
 
-    @NotBlank(message = "用户标识丢失", groups = Update.class)
+    //    @NotBlank(message = "用户标识丢失", groups = Update.class)
     private String accId;
 
     @NotBlank(message = "名称不能为空", groups = {Add.class, Update.class})
@@ -25,7 +25,7 @@ public class PersonalDataModel implements Serializable {
     @Pattern(regexp = "^[\\u4E00-\\u9FA5]$+", message = "名称必须是汉字", groups = {Add.class, Update.class})
     private String userName;
 
-    @NotBlank(message = "请选择性别",groups = {Add.class, Update.class})
+    @NotBlank(message = "请选择性别", groups = {Add.class, Update.class})
     @Size(max = 1, message = "性别选择错误", groups = {Add.class, Update.class})
     @Pattern(regexp = "^[M,F]$", message = "性别选择错误", groups = {Add.class, Update.class})
     private String sex;
