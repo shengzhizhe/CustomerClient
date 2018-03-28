@@ -3,7 +3,7 @@ package org.client.com.cargoaddress.controller;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.client.com.cargoaddress.model.ADD;
-import org.client.com.cargoaddress.model.CargoAddressModel;
+import org.client.com.server.model.CargoAddressModel;
 import org.client.com.cargoaddress.model.UPDATE;
 import org.client.com.server.CustomerInterface;
 import org.client.com.util.resultJson.ResponseResult;

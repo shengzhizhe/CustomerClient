@@ -1,5 +1,7 @@
-package org.client.com.cargoaddress.model;
+package org.client.com.server.model;
 
+import org.client.com.cargoaddress.model.ADD;
+import org.client.com.cargoaddress.model.UPDATE;
 import org.hibernate.validator.constraints.NotBlank;
 
 import javax.validation.constraints.Pattern;

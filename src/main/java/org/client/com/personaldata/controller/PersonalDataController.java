@@ -2,7 +2,7 @@ package org.client.com.personaldata.controller;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.client.com.personaldata.model.PersonalDataModel;
+import org.client.com.server.model.PersonalDataModel;
 import org.client.com.server.CustomerInterface;
 import org.client.com.util.resultJson.ResponseResult;
 import org.springframework.beans.factory.annotation.Autowired;

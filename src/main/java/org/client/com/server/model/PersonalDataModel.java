@@ -1,4 +1,4 @@
-package org.client.com.personaldata.model;
+package org.client.com.server.model;
 
 import java.io.Serializable;
 
