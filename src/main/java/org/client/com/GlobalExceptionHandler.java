@@ -281,7 +281,7 @@ public class GlobalExceptionHandler {
         log.debug("ERROR::::：" + Arrays.toString(exception.getSuppressed()) + "::::::" + new Date());
         log.debug("ERROR::::：" + exception.getMessage() + "::::::" + new Date());
         log.debug("ERROR::::：" + Arrays.toString(exception.getStackTrace()) + "::::::" + new Date());
-        return new ResponseResult<>(false, "服务链接异常");
+        return new ResponseResult<>(false, "服务链接超时");
     }
 
 }
