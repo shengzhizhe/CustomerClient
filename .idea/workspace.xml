@@ -3,11 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="6fbf86d8-48b8-4cad-97e3-cbb9a3051f85" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/client/com/cargoaddress/controller/CargoAddressController.java" afterPath="$PROJECT_DIR$/src/main/java/org/client/com/cargoaddress/controller/CargoAddressController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/client/com/cargoaddress/model/CargoAddressModel.java" afterPath="$PROJECT_DIR$/src/main/java/org/client/com/server/model/CargoAddressModel.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/client/com/personaldata/controller/PersonalDataController.java" afterPath="$PROJECT_DIR$/src/main/java/org/client/com/personaldata/controller/PersonalDataController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/client/com/personaldata/model/PersonalDataModel.java" afterPath="$PROJECT_DIR$/src/main/java/org/client/com/server/model/PersonalDataModel.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/client/com/server/CustomerInterface.java" afterPath="$PROJECT_DIR$/src/main/java/org/client/com/server/CustomerInterface.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/client/com/cargoaddress/model/ADD.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/client/com/cargoaddress/model/UPDATE.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/client/com/server/model/CargoAddressModel.java" afterPath="$PROJECT_DIR$/src/main/java/org/client/com/server/model/CargoAddressModel.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,8 +40,8 @@
       <file leaf-file-name="CargoAddressModel.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/client/com/server/model/CargoAddressModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="10" column="13" lean-forward="true" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+            <state relative-caret-position="243">
+              <caret line="10" column="24" lean-forward="true" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -692,7 +690,14 @@
       <option name="project" value="LOCAL" />
       <updated>1522216824431</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="调整model位置">
+      <created>1522217152358</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1522217152358</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -748,7 +753,8 @@
     <MESSAGE value="添加统一异常处理" />
     <MESSAGE value="其它" />
     <MESSAGE value="增加接口约定" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加接口约定" />
+    <MESSAGE value="调整model位置" />
+    <option name="LAST_COMMIT_MESSAGE" value="调整model位置" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1074,8 +1080,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/client/com/server/model/CargoAddressModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="10" column="13" lean-forward="true" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        <state relative-caret-position="243">
+          <caret line="10" column="24" lean-forward="true" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
           <folding />
         </state>
       </provider>
