@@ -1,14 +1,13 @@
 package org.client.com.util.base64;
 
-import org.springframework.util.Base64Utils;
-
 public class Base64Test {
 
     public static void main(String[] args) {
         try {
 
-            byte[] bytes = Base64Utils.decode("TVRJek5EVTJOMkZC".getBytes("UTF-8"));
-            System.out.println(new String(bytes, "UTF-8"));
+            String s1 = Base64Util.decode("MTIzNDU2N2FB");
+            String s = Base64Util.encode("1234567aA");
+            System.out.println(s1);
         } catch (Exception e) {
             e.printStackTrace();
         }
