@@ -79,11 +79,10 @@ public class ShiroConfiguration {
         filterChainDefinitionMap.put("/configuration/**", "anon");
         filterChainDefinitionMap.put("/v2/api-docs", "anon");
         filterChainDefinitionMap.put("/", "anon");
-        filterChainDefinitionMap.put("/**", "anon");
 
         filterChainDefinitionMap.put("/defaultKaptcha", "anon");
 
-        filterChainDefinitionMap.put("/favicon.ico", "anon");
+        filterChainDefinitionMap.put("/**", "anon");
 //        filterChainDefinitionMap.put("/**", "myAccessControlFilter");
 
         //<!-- 过滤链定义，从上向下顺序执行，一般将 /**放在最为下边 -->:这是一个坑呢，一不小心代码就不好使了;
