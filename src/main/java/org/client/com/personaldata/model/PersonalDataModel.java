@@ -1,9 +1,5 @@
 package org.client.com.personaldata.model;
 
-import org.hibernate.validator.constraints.NotBlank;
-
-import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
 import java.io.Serializable;
 
 /**
@@ -14,37 +10,32 @@ import java.io.Serializable;
  */
 public class PersonalDataModel implements Serializable {
 
-    //    @NotBlank(message = "主键丢失", groups = Update.class)
+    //    uuid
     private String uuid;
-
-    //    @NotBlank(message = "用户标识丢失", groups = Update.class)
-    private String accId;
-
-    @NotBlank(message = "名称不能为空", groups = {Add.class, Update.class})
-    @Size(min = 1, max = 5, message = "名称长度为1-5位之间", groups = {Add.class, Update.class})
-    @Pattern(regexp = "^[\\u4E00-\\u9FA5]$+", message = "名称必须是汉字", groups = {Add.class, Update.class})
-    private String userName;
-
-    @NotBlank(message = "请选择性别", groups = {Add.class, Update.class})
-    @Size(max = 1, message = "性别选择错误", groups = {Add.class, Update.class})
-    @Pattern(regexp = "^[M,F]$", message = "性别选择错误", groups = {Add.class, Update.class})
-    private String sex;
-
-    @Pattern(regexp = "(^[1-9]\\d{5}(18|19|([23]\\d))\\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\\d{3}[0-9Xx]$)" +
-            "|(^[1-9]\\d{5}\\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\\d{2}$)",
-            message = "身份证格式错误", groups = {Add.class, Update.class})
-    private String IDNumber;
-
-    @Pattern(regexp = "^1(3|4|5|7|8)\\d{9}$", message = "手机号格式错误", groups = {Add.class, Update.class})
+    //    账户
+    private String account;
+    //    头像
+    private String portrait;
+    //    昵称
+    private String nickname;
+    //    姓
+    private String surname;
+    //    名
+    private String name;
+    //    手机
     private String phone;
-
-    @Pattern(regexp = "^[^&#<>'\\\"\\\\|+%\\\\\\\\]*$", message = "常驻地址不能包含特殊符号",
-            groups = {Add.class, Update.class})
-    private String permanentAddress;
-
-    @Pattern(regexp = "^(19|20)\\d{2}-(1[0-2]|0?[1-9])-(0?[1-9]|[1-2][0-9]|3[0-1])$",
-            message = "生日格式错误,正确格式为：xxxx-xx-xx", groups = {Add.class, Update.class})
-    private String birthday;
+    //    身份证号
+    private String idno;
+    //    性别 Y:男 N:女
+    private String sex;
+    //    地址
+    private String address;
+    //    qq
+    private String qq;
+    //    微信
+    private String wechat;
+    //    微博
+    private String microblog;
 
     public String getUuid() {
         return uuid;
@@ -54,28 +45,44 @@ public class PersonalDataModel implements Serializable {
         this.uuid = uuid;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getAccount() {
+        return account;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setAccount(String account) {
+        this.account = account;
     }
 
-    public String getSex() {
-        return sex;
+    public String getPortrait() {
+        return portrait;
     }
 
-    public void setSex(String sex) {
-        this.sex = sex;
+    public void setPortrait(String portrait) {
+        this.portrait = portrait;
     }
 
-    public String getIDNumber() {
-        return IDNumber;
+    public String getNickname() {
+        return nickname;
     }
 
-    public void setIDNumber(String IDNumber) {
-        this.IDNumber = IDNumber;
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getPhone() {
@@ -86,66 +93,102 @@ public class PersonalDataModel implements Serializable {
         this.phone = phone;
     }
 
-    public String getPermanentAddress() {
-        return permanentAddress;
+    public String getIdno() {
+        return idno;
     }
 
-    public void setPermanentAddress(String permanentAddress) {
-        this.permanentAddress = permanentAddress;
+    public void setIdno(String idno) {
+        this.idno = idno;
     }
 
-    public String getBirthday() {
-        return birthday;
+    public String getSex() {
+        return sex;
     }
 
-    public void setBirthday(String birthday) {
-        this.birthday = birthday;
+    public void setSex(String sex) {
+        this.sex = sex;
     }
 
-    public String getAccId() {
-        return accId;
+    public String getAddress() {
+        return address;
     }
 
-    public void setAccId(String accId) {
-        this.accId = accId;
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getQq() {
+        return qq;
+    }
+
+    public void setQq(String qq) {
+        this.qq = qq;
+    }
+
+    public String getWechat() {
+        return wechat;
+    }
+
+    public void setWechat(String wechat) {
+        this.wechat = wechat;
+    }
+
+    public String getMicroblog() {
+        return microblog;
+    }
+
+    public void setMicroblog(String microblog) {
+        this.microblog = microblog;
     }
 
     public PersonalDataModel() {
         super();
     }
 
-    public PersonalDataModel(String accId, String userName, String sex, String IDNumber, String phone, String permanentAddress, String birthday) {
-        this.accId = accId;
-        this.userName = userName;
-        this.sex = sex;
-        this.IDNumber = IDNumber;
-        this.phone = phone;
-        this.permanentAddress = permanentAddress;
-        this.birthday = birthday;
-    }
-
-    public PersonalDataModel(String uuid, String accId, String userName, String sex, String IDNumber, String phone, String permanentAddress, String birthday) {
+    public PersonalDataModel(String uuid,
+                             String account,
+                             String portrait,
+                             String nickname,
+                             String surname,
+                             String name,
+                             String phone,
+                             String idno,
+                             String sex,
+                             String address,
+                             String qq,
+                             String wechat,
+                             String microblog) {
         this.uuid = uuid;
-        this.accId = accId;
-        this.userName = userName;
-        this.sex = sex;
-        this.IDNumber = IDNumber;
+        this.account = account;
+        this.portrait = portrait;
+        this.nickname = nickname;
+        this.surname = surname;
+        this.name = name;
         this.phone = phone;
-        this.permanentAddress = permanentAddress;
-        this.birthday = birthday;
+        this.idno = idno;
+        this.sex = sex;
+        this.address = address;
+        this.qq = qq;
+        this.wechat = wechat;
+        this.microblog = microblog;
     }
 
     @Override
     public String toString() {
         return "PersonalDataModel{" +
                 "uuid='" + uuid + '\'' +
-                ", accId='" + accId + '\'' +
-                ", userName='" + userName + '\'' +
-                ", sex='" + sex + '\'' +
-                ", IDNumber='" + IDNumber + '\'' +
+                ", account='" + account + '\'' +
+                ", portrait='" + portrait + '\'' +
+                ", nickname='" + nickname + '\'' +
+                ", surname='" + surname + '\'' +
+                ", name='" + name + '\'' +
                 ", phone='" + phone + '\'' +
-                ", permanentAddress='" + permanentAddress + '\'' +
-                ", birthday='" + birthday + '\'' +
+                ", idno='" + idno + '\'' +
+                ", sex='" + sex + '\'' +
+                ", address='" + address + '\'' +
+                ", qq='" + qq + '\'' +
+                ", wechat='" + wechat + '\'' +
+                ", microblog='" + microblog + '\'' +
                 '}';
     }
 }

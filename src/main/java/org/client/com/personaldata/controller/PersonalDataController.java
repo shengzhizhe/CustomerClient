@@ -3,13 +3,11 @@ package org.client.com.personaldata.controller;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.client.com.personaldata.model.PersonalDataModel;
-import org.client.com.personaldata.model.Update;
 import org.client.com.server.CustomerInterface;
 import org.client.com.util.resultJson.ResponseResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -44,7 +42,7 @@ public class PersonalDataController {
     @RequestMapping(value = "/personalData", method = RequestMethod.PUT,
             consumes = MediaType.APPLICATION_JSON_UTF8_VALUE,
             produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public ResponseResult<PersonalDataModel> update(@Validated(value = Update.class) @RequestBody PersonalDataModel model,
+    public ResponseResult<PersonalDataModel> update(@RequestBody PersonalDataModel model,
                                                     BindingResult bindingResult) {
         ResponseResult<PersonalDataModel> result = new ResponseResult<>();
 
