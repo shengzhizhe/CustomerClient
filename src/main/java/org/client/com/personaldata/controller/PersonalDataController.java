@@ -4,7 +4,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.client.com.personaldata.model.PersonalDataModel;
 import org.client.com.personaldata.model.Update;
-import org.client.com.server.PersonalDataInterface;
+import org.client.com.server.CustomerInterface;
 import org.client.com.util.resultJson.ResponseResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.*;
 public class PersonalDataController {
 
     @Autowired
-    private PersonalDataInterface dataInterface;
+    private CustomerInterface customerInterface;
 
     @ApiOperation(value = "获取个人资料",
             response = ResponseResult.class,
@@ -33,7 +33,7 @@ public class PersonalDataController {
     @RequestMapping(value = "/personalData/{id}", method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseResult<PersonalDataModel> init(@PathVariable("id") String id) {
-        return dataInterface.getById(id);
+        return customerInterface.personaldata_getById(id);
     }
 
     @ApiOperation(value = "修改个人资料",
@@ -55,8 +55,8 @@ public class PersonalDataController {
         }
 
         if (model.getUuid() == null || model.getUuid().trim().equals(""))
-            return dataInterface.add(model);
+            return customerInterface.personaldata_add(model);
         else
-            return dataInterface.update(model);
+            return customerInterface.personaldata_update(model);
     }
 }
