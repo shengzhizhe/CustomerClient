@@ -13,7 +13,7 @@ import java.util.List;
 
 /**
  * @author ld
- * @name 客户远程接口类
+ * @name 统一远程接口类
  * @table
  * @remarks
  */
