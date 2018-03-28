@@ -59,7 +59,7 @@ public class CargoAddressController {
         return customerInterface.crgoaddress_add(model);
     }
 
-    @ApiOperation(value = "修改收货地址",
+    @ApiOperation(value = "根据id修改收货地址",
             response = ResponseResult.class,
             httpMethod = "PUT",
             consumes = MediaType.APPLICATION_JSON_UTF8_VALUE,
@@ -80,11 +80,11 @@ public class CargoAddressController {
         return customerInterface.crgoaddress_update(model);
     }
 
-    @ApiOperation(value = "删除收货地址",
+    @ApiOperation(value = "根据id删除收货地址",
             response = ResponseResult.class,
             httpMethod = "DELETE",
             produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    @RequestMapping(value = "/cargoaddress/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/cargoaddress/{id}", method = RequestMethod.DELETE)
     public ResponseResult<CargoAddressModel> delById(@PathVariable("id") String id) {
         return customerInterface.crgoaddress_delById(id);
     }
