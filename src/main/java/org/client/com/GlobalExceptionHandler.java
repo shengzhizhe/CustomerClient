@@ -19,8 +19,6 @@ import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.Date;
 
-//import org.hibernate.JDBCException;
-
 /**
  * 全局异常处理
  * LD
@@ -42,7 +40,6 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(value = AuthorizationException.class)
     public ResponseResult authorizationException(HttpServletRequest request,
                                                  Exception exception) throws Exception {
-//        exception.printStackTrace();
         log.debug("ERROR::::：" + exception.getLocalizedMessage() + "::::::" + new Date());
         log.debug("ERROR::::：" + exception.getCause() + "::::::" + new Date());
         log.debug("ERROR::::：" + Arrays.toString(exception.getSuppressed()) + "::::::" + new Date());
@@ -62,7 +59,6 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(value = UnauthorizedException.class)
     public ResponseResult UnauthorizedException(HttpServletRequest request,
                                                 Exception exception) throws Exception {
-//        exception.printStackTrace();
         log.debug("ERROR::::：" + exception.getLocalizedMessage() + "::::::" + new Date());
         log.debug("ERROR::::：" + exception.getCause() + "::::::" + new Date());
         log.debug("ERROR::::：" + Arrays.toString(exception.getSuppressed()) + "::::::" + new Date());
@@ -82,7 +78,6 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(value = UnauthenticatedException.class)
     public ResponseResult UnauthenticatedException(HttpServletRequest request,
                                                    Exception exception) throws Exception {
-//        exception.printStackTrace();
         log.debug("ERROR::::：" + exception.getLocalizedMessage() + "::::::" + new Date());
         log.debug("ERROR::::：" + exception.getCause() + "::::::" + new Date());
         log.debug("ERROR::::：" + Arrays.toString(exception.getSuppressed()) + "::::::" + new Date());
@@ -104,7 +99,6 @@ public class GlobalExceptionHandler {
     @ResponseBody
     public ResponseResult ClassCastException(HttpServletRequest request,
                                              Exception exception) throws Exception {
-//        exception.printStackTrace();
         log.debug("ERROR::::：" + exception.getLocalizedMessage() + "::::::" + new Date());
         log.debug("ERROR::::：" + exception.getCause() + "::::::" + new Date());
         log.debug("ERROR::::：" + Arrays.toString(exception.getSuppressed()) + "::::::" + new Date());
@@ -118,7 +112,6 @@ public class GlobalExceptionHandler {
     @ResponseBody
     public ResponseResult ArrayIndexOutOfBoundsException(HttpServletRequest request,
                                                          Exception exception) throws Exception {
-//        exception.printStackTrace();
         log.debug("ERROR::::：" + exception.getLocalizedMessage() + "::::::" + new Date());
         log.debug("ERROR::::：" + exception.getCause() + "::::::" + new Date());
         log.debug("ERROR::::：" + Arrays.toString(exception.getSuppressed()) + "::::::" + new Date());
@@ -131,7 +124,6 @@ public class GlobalExceptionHandler {
     @ResponseBody
     public ResponseResult FileNotFoundException(HttpServletRequest request,
                                                 Exception exception) throws Exception {
-//        exception.printStackTrace();
         log.debug("ERROR::::：" + exception.getLocalizedMessage() + "::::::" + new Date());
         log.debug("ERROR::::：" + exception.getCause() + "::::::" + new Date());
         log.debug("ERROR::::：" + Arrays.toString(exception.getSuppressed()) + "::::::" + new Date());
@@ -145,7 +137,6 @@ public class GlobalExceptionHandler {
     @ResponseBody
     public ResponseResult SQLException(HttpServletRequest request,
                                        Exception exception) throws Exception {
-//        exception.printStackTrace();
         log.debug("ERROR::::：" + exception.getLocalizedMessage() + "::::::" + new Date());
         log.debug("ERROR::::：" + exception.getCause() + "::::::" + new Date());
         log.debug("ERROR::::：" + Arrays.toString(exception.getSuppressed()) + "::::::" + new Date());
@@ -158,7 +149,6 @@ public class GlobalExceptionHandler {
     @ResponseBody
     public ResponseResult IOException(HttpServletRequest request,
                                       Exception exception) throws Exception {
-//        exception.printStackTrace();
         log.debug("ERROR::::：" + exception.getLocalizedMessage() + "::::::" + new Date());
         log.debug("ERROR::::：" + exception.getCause() + "::::::" + new Date());
         log.debug("ERROR::::：" + Arrays.toString(exception.getSuppressed()) + "::::::" + new Date());
@@ -171,7 +161,6 @@ public class GlobalExceptionHandler {
     @ResponseBody
     public ResponseResult NoSuchMethodException(HttpServletRequest request,
                                                 Exception exception) throws Exception {
-//        exception.printStackTrace();
         log.debug("ERROR::::：" + exception.getLocalizedMessage() + "::::::" + new Date());
         log.debug("ERROR::::：" + exception.getCause() + "::::::" + new Date());
         log.debug("ERROR::::：" + Arrays.toString(exception.getSuppressed()) + "::::::" + new Date());
@@ -184,7 +173,6 @@ public class GlobalExceptionHandler {
     @ResponseBody
     public ResponseResult OutOfMemoryError(HttpServletRequest request,
                                            Exception exception) throws Exception {
-//        exception.printStackTrace();
         log.debug("ERROR::::：" + exception.getLocalizedMessage() + "::::::" + new Date());
         log.debug("ERROR::::：" + exception.getCause() + "::::::" + new Date());
         log.debug("ERROR::::：" + Arrays.toString(exception.getSuppressed()) + "::::::" + new Date());
@@ -197,7 +185,6 @@ public class GlobalExceptionHandler {
     @ResponseBody
     public ResponseResult StackOverflowError(HttpServletRequest request,
                                              Exception exception) throws Exception {
-        //exception.printStackTrace();
         log.debug("ERROR::::：" + exception.getLocalizedMessage() + "::::::" + new Date());
         log.debug("ERROR::::：" + exception.getCause() + "::::::" + new Date());
         log.debug("ERROR::::：" + Arrays.toString(exception.getSuppressed()) + "::::::" + new Date());
@@ -210,7 +197,6 @@ public class GlobalExceptionHandler {
     @ResponseBody
     public ResponseResult VirtualMachineError(HttpServletRequest request,
                                               Exception exception) throws Exception {
-        //exception.printStackTrace();
         log.debug("ERROR::::：" + exception.getLocalizedMessage() + "::::::" + new Date());
         log.debug("ERROR::::：" + exception.getCause() + "::::::" + new Date());
         log.debug("ERROR::::：" + Arrays.toString(exception.getSuppressed()) + "::::::" + new Date());
@@ -223,7 +209,6 @@ public class GlobalExceptionHandler {
     @ResponseBody
     public ResponseResult nullPointerException(HttpServletRequest request,
                                                Exception exception) throws Exception {
-        //exception.printStackTrace();
         log.debug("ERROR::::：" + exception.getLocalizedMessage() + "::::::" + new Date());
         log.debug("ERROR::::：" + exception.getCause() + "::::::" + new Date());
         log.debug("ERROR::::：" + Arrays.toString(exception.getSuppressed()) + "::::::" + new Date());
@@ -236,7 +221,6 @@ public class GlobalExceptionHandler {
     @ResponseBody
     public ResponseResult SAXException(HttpServletRequest request,
                                        Exception exception) throws Exception {
-        //exception.printStackTrace();
         log.debug("ERROR::::：" + exception.getLocalizedMessage() + "::::::" + new Date());
         log.debug("ERROR::::：" + exception.getCause() + "::::::" + new Date());
         log.debug("ERROR::::：" + Arrays.toString(exception.getSuppressed()) + "::::::" + new Date());
@@ -249,7 +233,6 @@ public class GlobalExceptionHandler {
     @ResponseBody
     public ResponseResult SAXParseException(HttpServletRequest request,
                                             Exception exception) throws Exception {
-        exception.printStackTrace();
         log.debug("ERROR::::：" + exception.getLocalizedMessage() + "::::::" + new Date());
         log.debug("ERROR::::：" + exception.getCause() + "::::::" + new Date());
         log.debug("ERROR::::：" + Arrays.toString(exception.getSuppressed()) + "::::::" + new Date());
@@ -262,7 +245,6 @@ public class GlobalExceptionHandler {
     @ResponseBody
     public ResponseResult feignException(HttpServletRequest request,
                                          Exception exception) throws Exception {
-        exception.printStackTrace();
         log.debug("ERROR::::：" + exception.getLocalizedMessage() + "::::::" + new Date());
         log.debug("ERROR::::：" + exception.getCause() + "::::::" + new Date());
         log.debug("ERROR::::：" + Arrays.toString(exception.getSuppressed()) + "::::::" + new Date());
@@ -275,7 +257,6 @@ public class GlobalExceptionHandler {
     @ResponseBody
     public ResponseResult retryableException(HttpServletRequest request,
                                              Exception exception) throws Exception {
-        exception.printStackTrace();
         log.debug("ERROR::::：" + exception.getLocalizedMessage() + "::::::" + new Date());
         log.debug("ERROR::::：" + exception.getCause() + "::::::" + new Date());
         log.debug("ERROR::::：" + Arrays.toString(exception.getSuppressed()) + "::::::" + new Date());

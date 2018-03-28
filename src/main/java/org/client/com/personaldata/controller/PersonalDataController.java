@@ -42,9 +42,6 @@ public class PersonalDataController {
             consumes = MediaType.APPLICATION_JSON_UTF8_VALUE,
             produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseResult<PersonalDataModel> update(@RequestBody PersonalDataModel model) {
-        if (model.getUuid() == null || model.getUuid().trim().equals(""))
-            return customerInterface.personaldata_add(model);
-        else
-            return customerInterface.personaldata_update(model);
+        return customerInterface.personaldata_update(model);
     }
 }

@@ -2,6 +2,7 @@ package org.client.com.server;
 
 import feign.Body;
 import feign.Headers;
+import feign.Param;
 import feign.RequestLine;
 import org.client.com.server.model.CargoAddressModel;
 import org.client.com.server.model.PersonalDataModel;
@@ -22,12 +23,7 @@ public interface CustomerInterface {
     /*****************************************************个人资料*************************************************************/
 
     @RequestLine("GET /personal/personal/account/{account}")
-    ResponseResult<PersonalDataModel> personaldata_getByAccount(@PathVariable("account") String account);
-
-    @Headers("Content-Type: application/json;charset=UTF-8")
-    @RequestLine("POST /personal/personal")
-    @Body("model={model}")
-    ResponseResult<PersonalDataModel> personaldata_add(@RequestBody PersonalDataModel model);
+    ResponseResult<PersonalDataModel> personaldata_getByAccount(@Param("account") String account);
 
     @Headers("Content-Type: application/json;charset=UTF-8")
     @RequestLine("PUT /personal/personal")
@@ -37,7 +33,7 @@ public interface CustomerInterface {
     /*****************************************************收货地址*************************************************************/
 
     @RequestLine("GET /crgoaddress/id/{id}")
-    ResponseResult<List<CargoAddressModel>> crgoaddress_findByAccId(@PathVariable("id") String id);
+    ResponseResult<List<CargoAddressModel>> crgoaddress_findByAccId(@Param("id") String id);
 
     @Headers("Content-Type: application/json;charset=UTF-8")
     @RequestLine("POST /crgoaddress")
@@ -45,7 +41,7 @@ public interface CustomerInterface {
     ResponseResult<CargoAddressModel> crgoaddress_add(@RequestBody CargoAddressModel model);
 
     @RequestLine("DELETE /crgoaddress/id/{id}")
-    ResponseResult<CargoAddressModel> crgoaddress_delById(@PathVariable("id") String id);
+    ResponseResult<CargoAddressModel> crgoaddress_delById(@Param("id") String id);
 
     @Headers("Content-Type: application/json;charset=UTF-8")
     @RequestLine("PUT /crgoaddress")
