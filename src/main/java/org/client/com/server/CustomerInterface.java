@@ -36,11 +36,13 @@ public interface CustomerInterface {
 
     /*****************************************************收货地址*************************************************************/
 
-    @RequestLine("GET /crgoaddress")
-    ResponseResult<List<CargoAddressModel>> crgoaddress_findList();
-
     @RequestLine("GET /crgoaddress/{id}")
-    ResponseResult<CargoAddressModel> crgoaddress_getByAccId(@PathVariable("id") String id);
+    ResponseResult<List<CargoAddressModel>> crgoaddress_findByAccId(@PathVariable("id") String id);
+
+    @Headers("Content-Type: application/json;charset=UTF-8")
+    @RequestLine("POST /crgoaddress")
+    @Body("model={model}")
+    ResponseResult<CargoAddressModel> crgoaddress_add(@RequestBody CargoAddressModel model);
 
     @RequestLine("DELETE /crgoaddress/{id}")
     ResponseResult<CargoAddressModel> crgoaddress_delById(@PathVariable("id") String id);
@@ -48,6 +50,6 @@ public interface CustomerInterface {
     @Headers("Content-Type: application/json;charset=UTF-8")
     @RequestLine("PUT /crgoaddress")
     @Body("model={model}")
-    ResponseResult<CargoAddressModel> crgoaddress_update(@RequestBody PersonalDataModel model);
+    ResponseResult<CargoAddressModel> crgoaddress_update(@RequestBody CargoAddressModel model);
 
 }
