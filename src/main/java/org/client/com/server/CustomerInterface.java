@@ -21,16 +21,16 @@ public interface CustomerInterface {
 
     /*****************************************************个人资料*************************************************************/
 
-    @RequestLine("GET /personaldata/{id}")
-    ResponseResult<PersonalDataModel> personaldata_getById(@PathVariable("id") String id);
+    @RequestLine("GET /personal/personal/account/{account}")
+    ResponseResult<PersonalDataModel> personaldata_getByAccount(@PathVariable("account") String account);
 
     @Headers("Content-Type: application/json;charset=UTF-8")
-    @RequestLine("POST /personaldata")
+    @RequestLine("POST /personal/personal")
     @Body("model={model}")
     ResponseResult<PersonalDataModel> personaldata_add(@RequestBody PersonalDataModel model);
 
     @Headers("Content-Type: application/json;charset=UTF-8")
-    @RequestLine("PUT /personaldata")
+    @RequestLine("PUT /personal/personal")
     @Body("model={model}")
     ResponseResult<PersonalDataModel> personaldata_update(@RequestBody PersonalDataModel model);
 

@@ -28,10 +28,10 @@ public class PersonalDataController {
             response = ResponseResult.class,
             httpMethod = "GET",
             produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    @RequestMapping(value = "/personalData/{id}", method = RequestMethod.GET,
+    @RequestMapping(value = "/personalData/account/{account}", method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public ResponseResult<PersonalDataModel> init(@PathVariable("id") String id) {
-        return customerInterface.personaldata_getById(id);
+    public ResponseResult<PersonalDataModel> init(@PathVariable("account") String account) {
+        return customerInterface.personaldata_getByAccount(account);
     }
 
     @ApiOperation(value = "修改个人资料",
