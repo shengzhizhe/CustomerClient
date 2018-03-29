@@ -36,7 +36,6 @@ public class RegisterController {
             produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseResult<RegisterModel> register(@Valid @RequestBody RegisterModel model,
                                                   BindingResult bindingResult) {
-        System.out.println(model.getPassword());
         ResponseResult<RegisterModel> result = new ResponseResult<>();
         try {
             if (bindingResult.hasErrors()) {
