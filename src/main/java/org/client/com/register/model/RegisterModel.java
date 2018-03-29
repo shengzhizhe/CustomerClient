@@ -1,6 +1,5 @@
 package org.client.com.register.model;
 
-import org.client.com.util.base64.Base64Util;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
 
@@ -13,16 +12,16 @@ public class RegisterModel implements Serializable {
     private String uuid;
 
     @NotBlank(message = "账户不能为空")
-    @Email(message = "不是标准的email格式")
+    @Email(message = "账户不是标准的email格式")
     private String account;
 
     @NotBlank(message = "密码不能为空")
-    @Pattern(regexp = "^[0-9a-zA-Z]*$", message = "密码由数字和英文字母组成")
+    @Pattern(regexp = "[a-zA-Z0-9]*", message = "密码由数字和英文字母组成,必须含有大小写")
     @Size(min = 8, max = 16, message = "密码长度为8-16之间")
     private String password;
 
     @NotBlank(message = "第二次密码不能为空")
-    @Pattern(regexp = "^[0-9a-zA-Z]*$", message = "密码由数字和英文字母组成")
+    @Pattern(regexp = "[a-zA-Z0-9]*", message = "密码由数字和英文字母组成,必须含有大小写")
     @Size(min = 8, max = 16, message = "密码长度为8-16之间")
     private String password2;
 
@@ -51,7 +50,7 @@ public class RegisterModel implements Serializable {
     }
 
     public void setPassword(String password) {
-        this.password = Base64Util.encode(password);
+        this.password = password;
     }
 
     public String getPassword2() {
@@ -59,8 +58,7 @@ public class RegisterModel implements Serializable {
     }
 
     public void setPassword2(String password2) {
-        this.password2 = Base64Util.encode(password2);
-        ;
+        this.password2 = password2;
     }
 
     public String getYzm() {

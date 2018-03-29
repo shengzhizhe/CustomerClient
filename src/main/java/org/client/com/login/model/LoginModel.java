@@ -16,7 +16,7 @@ public class LoginModel implements Serializable {
 
     @NotBlank(message = "密码不能为空，并且不能包含空格")
     @Size(message = "密码长度为8-20", min = 8, max = 20)
-    @Pattern(regexp = "^[0-9a-zA-Z]*$", message = "密码由(a-zA-Z0-9)组成,长度8-20")
+    @Pattern(regexp = "[a-zA-Z0-9]*", message = "密码由数字和英文字母组成,必须含有大小写")
     private String password;
 
     private String yzm;

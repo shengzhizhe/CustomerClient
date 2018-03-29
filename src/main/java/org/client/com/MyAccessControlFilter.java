@@ -57,6 +57,16 @@ public class MyAccessControlFilter extends AccessControlFilter {
     @Override
     public boolean onAccessDenied(ServletRequest request, ServletResponse response) throws Exception {
         HttpServletRequest httpServletRequest = (HttpServletRequest) request;
+
+//        获取所有请求的参数
+//        Enumeration enu = request.getParameterNames();
+//        while (enu.hasMoreElements()) {
+//            String paraName = (String) enu.nextElement();
+//            String s = request.getParameter(paraName).replace("共产党", "#");
+//            request.setAttribute(paraName, s);
+//        }
+
+//        获取cookie
         Cookie[] cookies = httpServletRequest.getCookies();
         String token_str = "";
         for (int i = 0; i < cookies.length; i++) {

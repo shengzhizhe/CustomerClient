@@ -3,9 +3,9 @@ package org.client.com.register.controller;
 import feign.FeignException;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.client.com.register.model.RegisterModel;
 import org.client.com.server.AccountInterface;
 import org.client.com.server.model.AccountModel;
-import org.client.com.register.model.RegisterModel;
 import org.client.com.util.resultJson.ResponseResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -36,6 +36,7 @@ public class RegisterController {
             produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseResult<RegisterModel> register(@Valid @RequestBody RegisterModel model,
                                                   BindingResult bindingResult) {
+        System.out.println(model.getPassword());
         ResponseResult<RegisterModel> result = new ResponseResult<>();
         try {
             if (bindingResult.hasErrors()) {
@@ -55,8 +56,8 @@ public class RegisterController {
             model1.setLevel("1");
             model1.setSource("移动端注册");
 
-            ResponseResult responseResult = anInterface.register(model1);
-            if (result.isSuccess()) {
+            ResponseResult<AccountModel> responseResult = anInterface.register(model1);
+            if (responseResult.isSuccess()) {
                 result.setSuccess(true);
                 result.setMessage("注册成功");
                 return result;
