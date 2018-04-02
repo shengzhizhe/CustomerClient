@@ -46,7 +46,7 @@ public class Application {
     public CustomerInterface customerInterface() {
         CustomerInterface interfaces = Feign.builder().encoder(new JacksonEncoder())
                 .decoder(new JacksonDecoder())
-                .target(CustomerInterface.class, "http://192.168.1.173:9004");
+                .target(CustomerInterface.class, "http://39.106.33.113:9002/customer");
         return interfaces;
     }
 
