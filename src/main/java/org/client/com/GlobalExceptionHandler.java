@@ -265,4 +265,16 @@ public class GlobalExceptionHandler {
         return new ResponseResult<>(false, "服务链接超时");
     }
 
+    @ExceptionHandler(value = IllegalArgumentException.class)
+    @ResponseBody
+    public ResponseResult illegalArgumentException(HttpServletRequest request,
+                                             Exception exception) throws Exception {
+        log.debug("ERROR::::：" + exception.getLocalizedMessage() + "::::::" + new Date());
+        log.debug("ERROR::::：" + exception.getCause() + "::::::" + new Date());
+        log.debug("ERROR::::：" + Arrays.toString(exception.getSuppressed()) + "::::::" + new Date());
+        log.debug("ERROR::::：" + exception.getMessage() + "::::::" + new Date());
+        log.debug("ERROR::::：" + Arrays.toString(exception.getStackTrace()) + "::::::" + new Date());
+        return new ResponseResult<>(false, "参数异常");
+    }
+
 }
